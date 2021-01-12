@@ -1,16 +1,17 @@
-FROM node
+FROM node:14
 
 WORKDIR /app
 
-COPY package.json .
+COPY package.json /app
 
 RUN npm install
 
-COPY . .
+COPY . /app
 
-EXPOSE 80
+ARG DEFAULT_PORT=80
 
-ENV MONGODB_USERNAME=root
-ENV MONGODB_PASSWORD=secret
+ENV PORT $DEFAULT_PORT
 
-CMD ["npm", "start"]
+EXPOSE $PORT
+
+CMD [ "npm", "start" ]
