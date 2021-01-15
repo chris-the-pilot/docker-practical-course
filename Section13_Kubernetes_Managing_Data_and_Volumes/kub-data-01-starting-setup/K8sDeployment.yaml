@@ -19,3 +19,9 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        volumeMounts:
+          - mountPath: /app/story
+            name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}
