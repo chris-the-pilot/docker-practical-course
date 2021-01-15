@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: story
-        image: chrispiloten/kub-data-demo
+        image: chrispiloten/kub-data-demo:1
         resources:
           limits:
             memory: "128Mi"
