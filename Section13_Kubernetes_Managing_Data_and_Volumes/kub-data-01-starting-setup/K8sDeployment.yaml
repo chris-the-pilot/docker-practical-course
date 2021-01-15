@@ -14,11 +14,14 @@ spec:
     spec:
       containers:
       - name: story
-        image: chrispiloten/kub-data-demo:1
+        image: chrispiloten/kub-data-demo:2
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        env:
+          - name: STORY_FOLDER
+            value: 'story'
         volumeMounts:
           - mountPath: /app/story
             name: story-volume
