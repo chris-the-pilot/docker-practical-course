@@ -17,3 +17,11 @@ spec:
       containers:
         - name: second-node 
           image: chrispiloten/kub-first-app
+          livenessProbe:
+            httpGet:
+              path: /error
+              port: 8080
+            periodSeconds: 5
+            initialDelaySeconds: 30
+          resources:
+            
